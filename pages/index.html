@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>blog</title>
+</head>
+
+<body>
+    <div class="mobile-nav" id="mobile_nav">
+        <div class="mobile-header">
+            <a href="#">
+                <i class="fa fa-home"></i>
+            </a>
+            <a href="#">About us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="mobile-nav_header">
+            <h1>Webb Inc</h1>
+            <button class="mobile-nav_close-btn" id="close_menu-btn">
+                <i class="fa fa-close"></i>
+            </button>
+        </div>
+
+        <div class="mobile-nav_list">
+            <a class="mobile-nav-item" id="scroll-link" href="./architecture.html">Architecture</a>
+            <a class="mobile-nav-item" id="scroll-link" href="./design.html">Design</a>
+            <a class="mobile-nav-item" id="scroll-link" href="./urbanism.html">Urbanism</a>
+            <a class="mobile-nav-item" id="scroll-link" href="./ecobuilding.html">Ecobuilding</a>
+            <a class="mobile-nav-item" id="scroll-link" href="./all-post.html">All Posts</a>
+
+            <div class="mobile-socials">
+                <i class="fa fa-facebook-square"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-twitter-square"></i>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <header>
+        <div class="header-info">
+            <a href="#">
+                <i class="fa fa-home"></i>
+            </a>
+            <a href="#">About us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+
+        </div>
+
+        <div class="header-social">
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter-square"></i>
+
+        </div>
+    </header>
+    <div class="container">
+        <nav>
+            <div class="brand"><a href="./index.html">Webb Inc.</a></div>
+            <div class="reg-navlist">
+                <a href="./architecture.html">Architecture</a>
+                <a href="./design.html">Design</a>
+                <a href="./urbanism.html">Urbanism</a>
+                <a href="./ecobuilding.html">Ecobuilding</a>
+                <a href="./all-post.html">All Posts</a>
+            </div>
+            <button class="menu-btn" id="open_menu-btn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+
+        <div class="slide-show_container"></div>
+
+        <!-- prev btn -->
+        <div class="directional-buttons">
+            <button class="btn prev-btn">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <!-- next button -->
+            <button class="btn next-btn">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+        
+
+
+        <div class="headline">Latest Posts</div>
+        <section class="blog-container"></section>
+
+        <div class="see-all-posts">
+            <button><a href="./all-post.html">See all Posts</a></button>
+        </div>
+    </div>
+
+    <div class="newsletter-box">
+        <h2>Get Our Monthly Newsletter, Directly Into Your Inbox!</h2>
+        <div class="form-container">
+            <form>
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Email address">
+                <input type="submit" value="Subscribe" class="submit-btn">
+                <!-- <div class="form-button">
+                    <button>Subscribe</button>
+                </div> -->
+
+            </form>
+        </div>
+    </div>
+    <script src="../src/app.js"></script>
+    <script src="../src/carousel.js"></script>
+    <script src="../src/mobile-nav.js"></script>
+</body>
+
+</html>
