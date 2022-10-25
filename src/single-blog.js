@@ -1,15 +1,15 @@
-// const blogApi = 'https://the-blog-api.herokuapp.com/blogs';
+
 const blogApi = 'https://fixed-blog-api-project.herokuapp.com/blogs';
 
 const singleBlogContainer = document.querySelector('.single-blog-container');
 
 const fetchBlog = async () => {
-    try {
+    singleBlogContainer.innerHTML = `<div class="loader"></div>`;
+    try {        
         const param = new URLSearchParams(window.location.search);
-        const id = param.get("id")
+        const id = param.get("id");
         
         
-
         const response = await fetch(`${blogApi}?id=${id}`);
         const data = await response.json();
         

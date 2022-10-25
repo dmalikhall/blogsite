@@ -1,13 +1,14 @@
-// const url = 'https://the-blog-api.herokuapp.com/blogs';
+
 const url = 'https://fixed-blog-api-project.herokuapp.com/blogs';
 
 const latestEntryList = document.querySelector('.full-dynamic-list');
 
 const fetchLatestEntry = async () => {
     try {
+        latestEntryList.innerHTML = `<span class="loader"></span>`;
         const response = await fetch(url);
         const data = await response.json();
-        // console.log(data.splice(6,4));
+
         return data.splice(6,4)
     } catch (error) {
         console.log(error);
@@ -17,7 +18,7 @@ const fetchLatestEntry = async () => {
 
 const displayLatestEntry = (entries) => {
     const entryList = entries.map((entry)=> {
-        // image, category, title, author
+
         const {image, category, title, id} = entry;
         const {name} = entry.author[0];
 

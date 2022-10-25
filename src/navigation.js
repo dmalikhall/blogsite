@@ -1,20 +1,27 @@
-// const url = 'https://the-blog-api.herokuapp.com/blogs';
+
 const url = 'https://fixed-blog-api-project.herokuapp.com/blogs';
 const navigationBlogContainer = document.querySelector('.category-blog_container');
-console.log(navigationBlogContainer);
 const navName = document.querySelector('#nav-name');
 
 const fetchNavigation = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data
+    try {
+        navigationBlogContainer.innerHTML = `<div class="loader"></div>`;
+        const response = await fetch(url);
+        const data = await response.json();
+        return data
+
+    } catch (error) {
+        console.log(error);
+
+    }
+
 }
 
 const displayNavigation = (navList) => {
     const navigationItems = navList.filter(
         (cat) => cat.category === navName.innerText
     );
-    
+
 
     const eachNavItem = navigationItems.map((navItem) => {
         const { image, title, description, id } = navItem;
@@ -32,7 +39,7 @@ const displayNavigation = (navList) => {
     </a>`
 
     }).join('');
-    
+
     navigationBlogContainer.innerHTML = `${eachNavItem}`
 }
 

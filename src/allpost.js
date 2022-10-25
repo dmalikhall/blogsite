@@ -1,9 +1,10 @@
-// const url = 'https://the-blog-api.herokuapp.com/blogs';
+
 const url = 'https://fixed-blog-api-project.herokuapp.com/blogs';
 const allPostsContent = document.querySelector('.all-posts_content')
 
 const fetchAllPosts = async () => {
     try {
+        allPostsContent.innerHTML = `<span class="loader"></span>`
         const response = await fetch(url);
         const data = await response.json();
         return data

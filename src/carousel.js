@@ -1,4 +1,4 @@
-// const carouselUrl = 'https://the-blog-api.herokuapp.com/blogs';
+
 const carouselUrl = 'https://fixed-blog-api-project.herokuapp.com/blogs';
 
 const slideContainer = document.querySelector('.slide-show_container');
@@ -10,10 +10,18 @@ const prevBtn = document.querySelector('.prev-btn');
 
 
 const carouselData = async () => {
-    const response = await fetch(carouselUrl);
-    const data = await response.json();
+    try {
+        slideContainer.innerHTML = `<span class="loader"></span>`;
+        const response = await fetch(carouselUrl);
+        const data = await response.json();
 
-    return data.splice(6, 8);
+        return data.splice(6, 8);
+
+    } catch (error) {
+        console.log(error);
+
+    }
+
 }
 
 const displayCarousel = (items) => {
@@ -48,7 +56,6 @@ const displayCarousel = (items) => {
 
 
     const startSlider = (type) => {
-        // get all three slides active,last next
         const active = document.querySelector('.active')
         const last = document.querySelector('.last')
         let next = active.nextElementSibling
@@ -74,14 +81,14 @@ const displayCarousel = (items) => {
         last.classList.add('next')
         next.classList.add('active')
     }
-    nextBtn.addEventListener('click', () => {    
+    nextBtn.addEventListener('click', () => {
         startSlider()
-        
+
     })
     prevBtn.addEventListener('click', () => {
         startSlider('prev')
 
-        
+
     })
 
 }
